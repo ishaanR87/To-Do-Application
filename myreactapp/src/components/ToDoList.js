@@ -1,10 +1,17 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import CreateTask from '../modals/CreateTask';
 
 export default function ToDoList() {
     const [modal, setModal] = useState(false);
     const [taskList, setTaskList] = useState([]);
 
+    useEffect(() => {
+      let array = localStorage.getItem("taskList");
+      if(array){
+        let obj = JSON.parse(array);
+        setTaskList(obj);
+      }
+    }, [])
 
     const toggle = () => {
       setModal(!modal); 
@@ -13,6 +20,7 @@ export default function ToDoList() {
     const saveTask = (taskObj) => {
       let tempList = taskList;
       tempList.push(taskObj);
+      localStorage.setItem("taskList", JSON.stringify(tempList))
       setTaskList(tempList);
       setModal(false);
     }
