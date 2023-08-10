@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import CreateTask from '../modals/createTask'
+import CreateTask from '../modals/CreateTask';
 
 export default function ToDoList() {
     const [modal, setModal] = useState(false);
