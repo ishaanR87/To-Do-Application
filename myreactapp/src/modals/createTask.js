@@ -20,6 +20,7 @@ export default function CreateTask({modal, toggle, save})  {
     let taskObj = {};
     taskObj["Name"] = taskName;
     taskObj["Description"] = description;
+    save(taskObj);
   }
 
   return (
