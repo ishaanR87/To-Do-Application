@@ -1,2 +1,2 @@
 # To-Do-Application
-To-Do application using React.js
+To-Do Application using React.js
